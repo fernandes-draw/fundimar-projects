@@ -1,9 +1,15 @@
 export const metadata = {
   title: {
-    absolute: 'Blog',
+    absolute: "Blog",
   },
 };
 
-export default function BlogPage() {
-  return <div>Blog Page</div>;
+export default async function BlogPage() {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("intentional delay");
+    }, 2000);
+  });
+
+  return <h1>My Blog</h1>;
 }
